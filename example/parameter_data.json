@@ -1,0 +1,32 @@
+{   "procs": 1,
+    "hpc": false,
+    "exp_model": "None",
+    "forward_model": "nummodel.py",
+    "ogsinputdir" : "/home/buchwalj/github/parameter_sampling/example/",
+    "meshgeo_accuracy" : 1.0e-2,
+    "keep_output_data" : true,
+    "input_data": {
+        "damping": 0.6,
+        "residual_gas_saturation": 0.0045
+        },
+    "distribution": {
+        "damping": {
+            "low": 0.1,
+            "mid": 0.5,
+            "high": 1.0,
+            "dist": "uniform"
+        },
+        "residual_gas_saturation": {
+            "low": 1e-16,
+            "high": 0.01,
+            "dist": "loguniform"
+        }
+    },
+    "observation_points": {"pt0": [0.5,0.0,0.0]},
+    "exp_err": {"temp": 4.0, "press": 2.0e5, "ux": 2.0e-5, "uy": 2.0e-5, "sigmaxx": 2.0e5, "sigmayy": 2.0e5 },
+    "hm_time_run":  {"initial": 0.0, "end": 1.0e6, "delta_t": 1001},
+    "fc_time_run":  {"initial": 0.0, "end": 5.0e6, "delta_t": 2001},
+    "hm_time_out":  {"initial": 0.0, "end": 1.0e6, "delta_t": 101},
+    "fc_time_out": {"initial": 0.0,  "end": 5.0e6, "delta_t" :201}
+}
+
